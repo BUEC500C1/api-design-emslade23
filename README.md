@@ -1,2 +1,3 @@
-# Twitter Summarizer API using Google Vision
+# Get Weather for Specified Airport
 
+- check requirements.txt for dependencies
