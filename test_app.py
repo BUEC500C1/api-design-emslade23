@@ -5,8 +5,8 @@ def airportCheck1():
     assert getAirportCoordinates("Total Rf Heliport") == [40.07080078, -74.93360138]
 
 
-def airportCheck2():
-    assert getAirportCoordinates("Lowell Field") == [59.94919968, -151.6959991]
+# def airportCheck2():
+#     assert getAirportCoordinates("Lowell Field") == [59.94919968, -151.6959991]
 
 
 def airportCheck3():
