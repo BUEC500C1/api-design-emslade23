@@ -24,12 +24,14 @@ def getAirportCoordinates(airportName):
 def weatherInformation(latitude, longitude):
     # using the weather api, find the weather for the airport's location
     appKey = os.environ['app_key']
-    api_address="http://api.openweathermap.org/data/2.5/weather?lat="+str(latitude)+"&lon="+str(longitude)+"&APPID="+str(appKey)+"&units=imperial"
+    url_part = + str(latitude) + "&lon=" + str(longitude) + "&APPID=" + str(appKey) + "&units=imperial"
+    api_address="http://api.openweathermap.org/data/2.5/weather?lat=" + url_part
     response = requests.get(api_address).json()
     return response
 
+
 app = Flask(__name__)
-app.config["DEBUG"] = True 
+app.config["DEBUG"] = True
 
 
 @app.route("/", methods=["GET"])
