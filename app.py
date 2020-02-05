@@ -12,11 +12,7 @@ def getAirportCoordinates(airportName):
     with open("airports.csv", 'r') as airportData:
         for element in csv.reader(airportData):
             if element[3] == airportName:
-                latLongArray = [element[4], element[5]]
-                if type(latLongArray[0]) == int and type(latLongArray[1]) == int:
-                    return latLongArray
-                else:
-                    return "error"
+                return [element[4], element[5]]
     # error check, if airport is not in there
     return "error"
 
@@ -24,14 +20,12 @@ def getAirportCoordinates(airportName):
 def weatherInformation(latitude, longitude):
     # using the weather api, find the weather for the airport's location
     appKey = os.environ['app_key']
-    url_part = + str(latitude) + "&lon=" + str(longitude) + "&APPID=" + str(appKey) + "&units=imperial"
-    api_address="http://api.openweathermap.org/data/2.5/weather?lat=" + url_part
+    api_address="http://api.openweathermap.org/data/2.5/weather?lat="+str(latitude)+"&lon="+str(longitude)+"&APPID="+str(appKey)+"&units=imperial"
     response = requests.get(api_address).json()
     return response
 
-
 app = Flask(__name__)
-app.config["DEBUG"] = True
+app.config["DEBUG"] = True 
 
 
 @app.route("/", methods=["GET"])
