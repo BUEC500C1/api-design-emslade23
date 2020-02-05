@@ -4,7 +4,8 @@
     </head>
     <body>
         <div class="form-style-6">
-            <h1>Please enter the name of the Airport so that we can find weather data about the region of the Airport</h1>
+            <h3>{{errorMessage}}</h3>
+            <h1>Please enter the exact name of your airport and we will give you the weather!</h1>
             <form method="POST" action="/">
             <input type="text" name="airportName" placeholder="Airport Name" />
             <input type="submit" value="Send" />
