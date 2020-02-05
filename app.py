@@ -12,7 +12,11 @@ def getAirportCoordinates(airportName):
     with open("airports.csv", 'r') as airportData:
         for element in csv.reader(airportData):
             if element[3] == airportName:
-                return [element[4], element[5]]
+                latLongArray = [element[4], element[5]]
+                if type(latLongArray[0]) == int and type(latLongArray[1]) == int:
+                    return latLongArray
+                else:
+                    return "error"
     # error check, if airport is not in there
     return "error"
 

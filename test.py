@@ -21,9 +21,9 @@ def airportErrorCheck1():
     assert getAirportCoordinates("Boston") == "error"
 
 
-def airportErrorCheck1():
-    assert getAirportCoordinates("Boston") == "error"
+def airportErrorCheck2():
+    assert getAirportCoordinates("SF") == "error"
 
 
-def airportErrorCheck1():
+def airportErrorCheck3():
     assert getAirportCoordinates("hello") == "error"
