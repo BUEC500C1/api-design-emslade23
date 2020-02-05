@@ -5,3 +5,11 @@
 
 
 #### Using Continuous Integration and Continuous Build
+
+## Instructions to Run:
+
+      pip install -r requirements.txt
+      
+      python3 app.py 
+      
+then, head to: http://127.0.0.1:5000/
