@@ -5,17 +5,7 @@ from flask import render_template, request, Flask
 import csv
 import requests
 import os
-
-
-def getAirportCoordinates(airportName):
-    # gets location of airport given the name of the airport
-    with open("airports.csv", 'r') as airportData:
-        for element in csv.reader(airportData):
-            if element[3] == airportName:
-                return [element[4], element[5]]
-    # error check, if airport is not in there
-    return "error"
-
+from apiFunctions import getAirportCoordinates
 
 def weatherInformation(latitude, longitude):
     # using the weather api, find the weather for the airport's location
